@@ -1,0 +1,6 @@
+﻿Suelta aqui las 6 (o mas) mejores fotos del feed de @registrodeunacreativa.
+
+Sugerencias:
+- Nombralas feed-1.jpg, feed-2.jpg, feed-3.jpg, etc. (asi las conecto mas rapido).
+- Formato cuadrado o vertical funciona mejor para el grid.
+- Cuando termines, dime "feed listo" y las conecto en la pagina.
