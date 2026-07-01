@@ -34,7 +34,10 @@ const vids = [...document.querySelectorAll('.vid')];
 function pararVideo(c){
   const v=c.querySelector('video'), btn=c.querySelector('.vsound');
   if(!v) return;
-  v.pause(); v.currentTime=0; v.muted=true;
+  v.pause();
+  v.muted=true;
+  v.load();              // reinicia el elemento → vuelve a mostrar la miniatura (poster)
+  c.classList.remove('is-playing');
   if(btn){ btn.textContent='🔇'; btn.setAttribute('aria-label','Activar sonido'); }
 }
 vids.forEach(c=>{
