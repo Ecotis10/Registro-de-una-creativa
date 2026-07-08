@@ -85,6 +85,22 @@ document.getElementById('agendaForm').addEventListener('submit',(ev)=>{
   window.open('https://wa.me/584146846689?text='+encodeURIComponent(t),'_blank');
 });
 
+/* menú móvil (hamburguesa) */
+const navToggle=document.querySelector('.nav-toggle');
+if(navToggle){
+  const closeMenu=()=>{ nav.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); navToggle.setAttribute('aria-label','Abrir menú'); };
+  navToggle.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    const open=nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open?'true':'false');
+    navToggle.setAttribute('aria-label', open?'Cerrar menú':'Abrir menú');
+  });
+  // Cerrar al tocar un enlace, con Escape, o al hacer clic fuera del header.
+  document.querySelectorAll('nav.links a').forEach(a=> a.addEventListener('click', closeMenu));
+  addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeMenu(); });
+  addEventListener('click',(e)=>{ if(nav.classList.contains('open') && !nav.contains(e.target)) closeMenu(); });
+}
+
 /* Botones "Lo quiero" -> bajan al formulario y precargan el mensaje del plan elegido */
 document.querySelectorAll('.pick').forEach(b=>{
   b.addEventListener('click',()=>{
